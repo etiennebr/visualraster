@@ -685,9 +685,9 @@ Angular data can sometimes be better expressed using a circular palette. In the 
 on Noth faces, when angle slightly changed from 360 to 0.
 
 ```{r echo = FALSE, message = FALSE}
-ggplot() + vr_geom_raster_seq(r_terrain[["aspect"]]) + ggtitle("aspect") + scale_fill_gradientn(colours = pal$circular2, limits = c(0, 2 * pi)) 
+ggplot() + vr_geom_raster_seq(trim(r_terrain[["aspect"]])) + ggtitle("aspect") + scale_fill_gradientn(colours = pal$circular2, limits = c(0, 2 * pi)) 
 
-ggplot() + vr_geom_raster_seq(power_to_angle(r_terrain[["flowdir"]])) + ggtitle("flowdir") + scale_fill_gradientn(colours = pal$circular2, limits = c(0, 360)) 
+ggplot() + vr_geom_raster_seq(power_to_angle(trim(r_terrain[["flowdir"]]))) + ggtitle("flowdir") + scale_fill_gradientn(colours = pal$circular2, limits = c(0, 360)) 
 ```
 
 
