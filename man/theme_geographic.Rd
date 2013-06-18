@@ -1,0 +1,20 @@
+\name{theme_geographic}
+\alias{theme_geographic}
+\title{A minimalist ggplot2 theme for ploting geographic rasters}
+\usage{
+  theme_geographic(base_size = 12, base_family = "")
+}
+\arguments{
+  \item{base_size}{\code{numeric} base font size}
+
+  \item{base_family}{\code{character} base font family}
+}
+\value{
+  An object of class \code{\link{theme}}.
+}
+\description{
+  Alters \code{\link{theme_fullframe}} by adding x axis
+  elements to indicate longitude. This theme is used for
+  illustrating \code{\link{rotate}}
+}
+

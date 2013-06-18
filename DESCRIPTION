@@ -1,0 +1,36 @@
+Package: visualraster
+Type: Package
+Title: Visual raster cheatsheet
+Version: 1.0
+Date: 2013-06-17
+Author: Etienne B. Racine
+Maintainer: Etienne B. Racine <etiennebr@gmail.com>
+Description: Illustrate spatial operations available in raster package
+License: GPL
+URL: http://github.com/etiennebr/visualraster
+BugReports: http://github.com/etiennebr/visualraster/issues
+Depends:
+    ggplot2,
+    igraph,
+    fields,
+    maps,
+    mapproj,
+    rgeos,
+    raster,
+    reshape,
+    grid,
+    methods,
+    RColorBrewer,
+    knitr,
+    xtable,
+    raster
+Suggests:
+    knitr
+VignetteBuilder: knitr
+Collate:
+    'visualraster.R'
+    'as_data.R'
+    'extent_as_polygon.R'
+    'power_to_angle.R'
+    'themes.R'
+    'geom_raster.R'

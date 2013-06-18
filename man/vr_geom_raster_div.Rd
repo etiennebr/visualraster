@@ -1,0 +1,16 @@
+\name{vr_geom_raster_div}
+\alias{vr_geom_raster_div}
+\title{Custom visual raster plot for diverging data}
+\usage{
+  vr_geom_raster_div(r, ...)
+}
+\arguments{
+  \item{r}{\code{Raster*}}
+
+  \item{...}{other arguments passed to
+  \code{\link{vr_geom_raster_seq}}}
+}
+\description{
+  Custom visual raster plot for diverging data
+}
+

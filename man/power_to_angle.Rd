@@ -1,0 +1,22 @@
+\name{power_to_angle}
+\alias{power_to_angle}
+\title{Transform flow directions powers of 2 to angular data}
+\usage{
+  power_to_angle(x, radians = FALSE)
+}
+\arguments{
+  \item{x}{\code{numeric} should be a vector containing
+  powers of 2}
+
+  \item{radians}{\code{boolean} should the result be in
+  radians (default is degrees)}
+}
+\description{
+  Tranditional flowdir directions are expressed in power of
+  two where 1 is East, 2 is South-East, 4 is South, 8 is
+  South-West, etc.
+}
+\seealso{
+  \link{terrain}
+}
+

@@ -1,0 +1,187 @@
+
+/************************************
+  
+	"Visual Raster" stylesheet
+	
+	(cc-by) 2013, Etienne B. Racine
+	This work is licensed under a Creative Commons 
+	Attribution 3.0 Unported License.
+
+************************************/
+
+body {
+	font: medium 'Ubuntu', 'Gill Sans', 'Gill Sans MT', Corbel, Helvetica, 'Nimbus Sans L', sans-serif;
+	font-size: 1.em;
+	color: #333; 
+	width:50%;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+
+.r {
+    font-size: 1.5em;
+}
+code {
+	font-family: 'Ubuntu Mono', Consolas, 'Andale Mono', Monaco, 'Liberation Mono', 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', monospace;
+}
+
+h1 {
+	font-size:2.2em; 
+	color: #334;
+}
+
+h2 { 
+   font-size:1.1em; 
+}
+
+h3 { 
+   font-size:0.9em; 
+}
+
+h4 { 
+   font-size:0.8em; 
+}
+
+h5 { 
+   font-size:0.7em; 
+}
+
+h6 { 
+   font-size:0.6em; 
+}
+
+h1 {
+	margin-top: 1em;
+}
+
+h2, h3, h4, h5, h6, h7, h8 {
+	margin-top: 0.5em;
+	margin-bottom: 1em;
+	text-align: left;
+}
+
+blockquote {
+    border-left: 5px solid #666;
+    padding-left: 20px;
+    margin-left: 20px;
+}
+
+p, li {
+    line-height: 1.8em;
+    margin-top: 10px;
+}
+
+hr {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border: none;
+    width: 50%;
+    border-top: 1px solid #ddd;
+}
+   
+ol, ul {
+    margin-left: 0px;
+    padding-left: 0px;
+    li {
+        margin-left: 0;  
+	  }
+}
+
+li ol, li ul{ 
+    margin-left: 30px;
+}
+
+.title {
+	margin-bottom: 0px;
+}
+.author, .date {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	display: inline-block;
+	color: #777;
+	margin-bottom: 30px;
+}
+
+.author::after {
+	content: ' ,';
+}
+.figure {
+	display: inline-block;
+}
+
+.caption {
+	text-align: center;
+	background: #F6F6F6;
+}
+
+table, td, th {
+  border: none;
+  border-collapse:collapse;
+  padding-left: 1em;
+}
+
+th {
+   border-top: 1px solid #999;
+   border-bottom: 1px solid #999;
+}
+
+tr:last-child {
+   border-bottom: 1px solid #999;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}

@@ -1,0 +1,25 @@
+\name{vr_geom_polygon}
+\alias{vr_geom_polygon}
+\title{Custom visual raster polygon plot}
+\usage{
+  vr_geom_polygon(p, size = 1, fill = "#22222280",
+    color = "#11111199", ...)
+}
+\arguments{
+  \item{p}{\code{data.frame} containing at least \code{x}
+  and \code{y} column (see \code{\link{fortify}} for a
+  transforming spatial polygons)}
+
+  \item{size}{\code{integer} line size}
+
+  \item{color}{\code{color} border colors}
+
+  \item{fill}{\code{color} fill colors}
+
+  \item{...}{other arguments passed to
+  \code{\link{geom_polygon}}}
+}
+\description{
+  Custom visual raster polygon plot
+}
+

@@ -1,0 +1,18 @@
+\name{extent_as_poly}
+\alias{extent_as_poly}
+\title{Transform raster extent to polygon}
+\usage{
+  extent_as_poly(e)
+}
+\arguments{
+  \item{e}{\code{Raster*} or \code{Extent} object to
+  transform as a foritfied polygon}
+}
+\value{
+  \code{data.frame} containing \code{x}, \code{y}, the
+  coordinates; \code{id} the polygon id (always equal to 1)
+}
+\description{
+  Transform raster extent to polygon
+}
+
