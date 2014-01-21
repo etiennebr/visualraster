@@ -19,7 +19,7 @@ Otherwise, download the package from the download section
   ```
 
 ## How to use it ?
-You can have a demonstration by typing `demo("visualraster")`
+You can have a demonstration by typing `demo("vr-cheatsheet")`
 
 ## Contacts
 If you find bugs or have features to request, please use the [github tracker][1].
