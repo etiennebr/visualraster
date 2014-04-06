@@ -1,4 +1,5 @@
 # The Visual Raster Cheat Sheet
 source(
-  system.file("doc", "visual-raster-cheatsheet.R", package="visualraster"), 
+  purl(system.file("doc", "visual-raster-cheatsheet.Rmd", package="visualraster"), 
+       output = tempfile()), 
   verbose = TRUE)
