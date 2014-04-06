@@ -7,7 +7,7 @@ The Visual Raster Cheat Sheet
 ========================================================
 
 #### Etienne B. Racine (etiennebr@gmail.com)
-#### 10 June 2013
+#### 6 April 2014
 
 ***
 
