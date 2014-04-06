@@ -2,7 +2,7 @@ Package: visualraster
 Type: Package
 Title: Visual raster cheatsheet
 Version: 1.1
-Date: 2013-06-17
+Date: 2014-01-21
 Author: Etienne B. Racine
 Maintainer: Etienne B. Racine <etiennebr@gmail.com>
 Description: Illustrate spatial operations available in raster package
@@ -22,15 +22,7 @@ Depends:
     methods,
     RColorBrewer,
     knitr,
-    xtable,
-    raster
+    xtable
 Suggests:
     knitr
 VignetteBuilder: knitr
-Collate:
-    'visualraster.R'
-    'as_data.R'
-    'extent_as_polygon.R'
-    'power_to_angle.R'
-    'themes.R'
-    'geom_raster.R'

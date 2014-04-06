@@ -29,8 +29,8 @@ options(xtable.include.rownames = FALSE)
 
 ```{r echo = FALSE, cache = FALSE, message = FALSE}
 library("visualraster")
-library("igraph")    # edge and clumps
-library("fields")    # Tps for interpolation
+library("igraph")    # boundaries and clumps
+library("fields")    # Tps for interpolation, predict.se
 library("maps")      # world data
 library("mapproj")   # projections in ggplot2
 library("rgeos")
@@ -284,7 +284,7 @@ Focal analysis consider a cell plus its direct neighbours in a contiguous and sy
 
 ## focal
 ```{r}
-r_focal = focal(r, fun = mean)
+r_focal = focal(r, fun = mean, w = matrix(1/9,nrow=3,ncol=3))
 ```
 
 ```{r, echo = FALSE}
@@ -294,7 +294,7 @@ ggplot() + vr_geom_raster_seq(r_focal) + vr_geom_text(r_focal)
 
 You can remove edge effect by ignoring NA values
 ```{r}
-r_focal_nedge = focal(r, fun = mean, na.rm = TRUE, pad = TRUE)
+r_focal_nedge = focal(r, fun = mean, w = matrix(1/9,nrow=3,ncol=3), na.rm = TRUE, pad = TRUE)
 ```
 
 ```{r, echo = FALSE}
@@ -344,16 +344,16 @@ ggplot() + vr_geom_raster(r_bin) + vr_geom_text(r_bin)
 ggplot() + vr_geom_raster(r_clumps) + vr_geom_text(r_clumps)
 ```
 
-## edge
+## boundaries
 ```{r}
 require("igraph")
 r_clus = init(r, function(x) ifelse(runif(x) > 0.2, 1, NA))
-r_edge = raster::edge(r_clus)
+r_boundaries = raster::boundaries(r_clus)
 ```
 
 ```{r echo = FALSE}
 ggplot() + vr_geom_raster(r_clus) + vr_geom_text(r_clus)
-ggplot() + vr_geom_raster(r_edge) + vr_geom_text(r_edge)
+ggplot() + vr_geom_raster(r_boundaries) + vr_geom_text(r_boundaries)
 ```
 
 ## extract
@@ -723,7 +723,7 @@ gsurvey = vr_geom_point(survey, size = 2)
 ggplot() + vr_geom_raster_seq(r_volcano) + ggtitle("Volcano") + gsurvey
 ggplot() + vr_geom_raster_seq(r_interpolate, limits = range(r_volcano[])) + ggtitle("Interpolation") + gsurvey
 ggplot() + vr_geom_raster_div(r_interpolate - r_volcano) + ggtitle("Differences") + gsurvey
-ggplot() + vr_geom_raster_seq(interpolate(r_volcano, tps, fun=predict.se)) + ggtitle("Standard Error") + gsurvey
+ggplot() + vr_geom_raster_seq(interpolate(r_volcano, tps, fun=predictSE)) + ggtitle("Standard Error") + gsurvey
 ```
 
 # layerize
