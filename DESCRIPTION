@@ -23,6 +23,4 @@ Depends:
     RColorBrewer,
     knitr,
     xtable
-Suggests:
-    knitr
 VignetteBuilder: knitr
