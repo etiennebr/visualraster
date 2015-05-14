@@ -144,6 +144,8 @@ ggplot() +
   vr_geom_text(r, family = "mono", size = 3, label = ref)
 ```
 
+Add vectors
+
 ```{r echo = FALSE}
 # plot geometries
 ggplot() + vr_geom_raster(r) + 
@@ -178,6 +180,7 @@ r_agg = aggregate(r, 2)
 ```{r echo = FALSE}
 ggplot() + vr_geom_raster(r_agg) + vr_geom_text(r_agg)
 ```
+
 ## disaggregate
 ```{r}
 r_dis = disaggregate(r, 2)
