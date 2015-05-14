@@ -681,8 +681,11 @@ for(i in names(r_terrain))
   print(ggplot() + vr_geom_raster_seq(r_terrain[[i]]) + ggtitle(i)) 
 ```
 
-Angular data can sometimes be better expressed using a circular palette. In the following figure, blue is an North orientation, while South is red. Both colors reach black at West and white at East. The preceeding figure had some sharp edges
-on Noth faces, when angle slightly changed from 360 to 0.
+Angular data can sometimes be better expressed using a circular palette. 
+In the following figure, blue is North orientation, while South is red. 
+Both colors reach black at West and white at East. 
+The preceeding figure had some sharp edges
+on North faces, when angle slightly changed from 360 to 0.
 
 ```{r echo = FALSE, message = FALSE}
 ggplot() + vr_geom_raster_seq(trim(r_terrain[["aspect"]])) + ggtitle("aspect") + scale_fill_gradientn(colours = pal$circular2, limits = c(0, 2 * pi)) 
