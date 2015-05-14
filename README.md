@@ -12,7 +12,7 @@ If `devtools` is installed, you can
 
   ```
   library("devtools")
-  install_github("visualraster", "etiennebr")
+  install_github("etiennebr/visualraster")
   ```
 Otherwise, download the package from the download section
 
