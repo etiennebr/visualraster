@@ -383,11 +383,16 @@ r_pt   = rasterize(pt, r)
 r_line = rasterize(ln, r)
 r_poly = rasterize(poly, r)
 
+pts = as.data.frame(rasterToPoints(r))
+gpts = geom_point(data = pts, aes(x = x, y = y), 
+                  size = 2, shape = 20, color = I("#00000055"))
+
 ggplot() + vr_geom_raster(r_pt) + gpt
 ggplot() + vr_geom_raster(r_line) + gln
-ggplot() + vr_geom_raster(r_poly) + gpy
+ggplot() + vr_geom_raster(r_poly) + gpts + gpy
 ```
 
+Note that polygon rasterization is by default looking at cell centroid overlap, 
 
 # Statistical
 Statistical operations summarize the raster information
@@ -465,7 +470,7 @@ geom_polygon(data = extent_as_poly(r), aes(x = x, y = y), fill = "#ffffffaa", si
 
 ## crop
 ```{r eval = TRUE}
-f = extent(r) - c(0.35, 0.43)
+f = extent(0.23, 0.86, 0.22, 0.73)
 ```
 
 ```{r eval = FALSE}
@@ -474,7 +479,7 @@ crop(r, f)
 
 ```{r echo = FALSE}
 ggplot() + vr_geom_raster(r) +
-geom_polygon(data = extent_as_poly(f), aes(x = x, y = y), fill = "#ffffffaa", size = 2, colour = "black", linetype = "dashed")
+geom_polygon(data = extent_as_poly(f), aes(x = x, y = y), fill = "#ffffffaa", size = 2, colour = "black", linetype = "dashed") + gpts
 
 r_crop = crop(r, f)
 
@@ -485,7 +490,7 @@ ggplot() + vr_geom_raster(crop(r, f)) +
                colour = "black",
                linetype = "dashed") + 
   geom_polygon(data = extent_as_poly(r), 
-               aes(x = x, y = y), fill = NA, size = NA)
+               aes(x = x, y = y), fill = NA, size = NA) + gpts
 ```
 
 ## intersect
