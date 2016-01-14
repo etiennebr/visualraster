@@ -7,7 +7,10 @@ The Visual Raster Cheat Sheet
 ========================================================
 
 #### Etienne B. Racine (etiennebr@gmail.com)
-`r Sys.Date()`
+`r Sys.Date()` (R version 
+`r paste0(version[["major"]], ".", version[["minor"]])`
+and raster package version 
+`r packageVersion("raster")`)
 
 Source code and package available at https://github.com/etiennebr/visualraster. 
 Suggestions, contributions, feature request, and bug report are appreciated and 
