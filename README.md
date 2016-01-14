@@ -5,7 +5,6 @@ The visual Raster Cheatsheet
 This R package illustrate some operations of the raster package. The essence of
 the content is available directly [from RPubs][1]. 
 However, if you want to install it on your computer, read on. 
-Note that the Rpubs version might not display properly in Firefox.
 
 ## Installation
 If `devtools` is installed, you can 
