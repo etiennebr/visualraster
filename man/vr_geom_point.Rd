@@ -12,7 +12,7 @@ vr_geom_point(p, size = 4, shape = 21, color = "#222222",
 
 \item{size}{\code{integer} point size}
 
-\item{shape}{shpae of the point (default 21) see \code{\link{geom_point}}
+\item{shape}{shape of the point (default 21) see \code{\link{geom_point}} 
 for details}
 
 \item{color}{\code{color} line colors}

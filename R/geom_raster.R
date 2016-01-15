@@ -77,7 +77,7 @@ vr_geom_text = function (r, color = I("#222222"), label = NULL, ...) {
 #' @param size \code{integer} point size
 #' @param color \code{color} line colors
 #' @param fill \code{color} fill colors
-#' @param shape shpae of the point (default 21) see \code{\link{geom_point}} 
+#' @param shape shape of the point (default 21) see \code{\link{geom_point}} 
 #' for details
 #' @param ... other arguments passed to \code{\link{geom_point}}
 #' @export
