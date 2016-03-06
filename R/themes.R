@@ -16,7 +16,6 @@ theme_fullframe = function (base_size = 12, base_family = ""){
       axis.title.x = element_blank(),
       axis.title.y = element_blank(),
       axis.ticks.length = grid::unit(0, "lines"),
-      axis.ticks.margin = grid::unit(0, "lines"),
       legend.position = "none",
       panel.background = element_blank(),
       panel.border = element_blank(),
@@ -41,7 +40,6 @@ theme_geographic = function (base_size = 12, base_family = ""){
   theme_fullframe(base_size = base_size, base_family = base_family) %+replace%
     theme(axis.text.x = element_text(), 
           axis.ticks = element_line(colour = "#aaaaaa", size = 0.2), 
-          axis.ticks.length = grid::unit(1, "mm"),
-          axis.ticks.margin = grid::unit(1, "mm")
+          axis.ticks.length = grid::unit(1, "mm")
     ) 
 }
