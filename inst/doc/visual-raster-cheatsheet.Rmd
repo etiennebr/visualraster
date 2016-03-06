@@ -52,11 +52,7 @@ library("RColorBrewer")
 # define palette of colors
 pal = list (
   qualitative = brewer.pal(11, "Set3"),
-  circular = c("#74A9CF", "#BDC9E1", "#FFFFFF", 
-               "#FEF0D9", "#FDCC8A", "#E34A33",
-               "#B30000", "#000000", "#045A8D", 
-               "#2B8CBE"),
-  circular2 = c("#0088FF", "#ffffff", "#F51D1D", "#400038", "#0088FF")
+  circular = c("#0088FF", "#ffffff", "#F51D1D", "#400038", "#0088FF")
 )
 names(pal$qualitative) = 1:length(pal$qualitative)
 
@@ -326,7 +322,7 @@ extent(z) = extent(r)
 ```
 
 ```{r echo = FALSE}
-ggplot() + vr_geom_raster(z) + vr_geom_text(z)
+ggplot() + vr_geom_raster_seq(z) + vr_geom_text(z)
 ggplot() + vr_geom_raster(r) + vr_geom_text(r)
 ```
 
@@ -653,7 +649,6 @@ pts$coords = with(pts, paste0(round(x * 100), ",", round(y * 100)))
 ggplot() +
   vr_geom_raster(r) +
   vr_geom_raster(r, color = "#ffffff", fill = "#ffffffaa") +
-  scale_color_manual(values = pal$qualitative) +
   geom_point(data = pts, aes(x = x, y = y, fill = factor(layer), label = coords), size = 6, shape = 21, color = I("#050505")) + 
   geom_point(data = pts, aes(x = x, y = y, color = factor(layer), label = coords), alpha = 0.5, size = 6, color = I("#050505"), shape = "+") + 
   geom_text(data = pts, aes(x = x, y = y, color = factor(layer), label = coords), size = 2, hjust = 0, vjust = 0, color = "#111111", angle = 45) +
@@ -703,9 +698,9 @@ The preceeding figure had some sharp edges
 on North faces, when angle slightly changed from 360 to 0.
 
 ```{r echo = FALSE, message = FALSE}
-ggplot() + vr_geom_raster_seq(trim(r_terrain[["aspect"]])) + ggtitle("aspect") + scale_fill_gradientn(colours = pal$circular2, limits = c(0, 2 * pi)) 
+ggplot() + vr_geom_raster_seq(trim(r_terrain[["aspect"]])) + ggtitle("aspect") + scale_fill_gradientn(colours = pal$circular, limits = c(0, 2 * pi)) 
 
-ggplot() + vr_geom_raster_seq(power_to_angle(trim(r_terrain[["flowdir"]]))) + ggtitle("flowdir") + scale_fill_gradientn(colours = pal$circular2, limits = c(0, 360)) 
+ggplot() + vr_geom_raster_seq(power_to_angle(trim(r_terrain[["flowdir"]]))) + ggtitle("flowdir") + scale_fill_gradientn(colours = pal$circular, limits = c(0, 360)) 
 ```
 
 
@@ -731,12 +726,6 @@ r_interpolate = interpolate(r_volcano, tps)
 ```
 
 ```{r echo = FALSE, message = FALSE}
-vr_geom_raster_div = function (r, ...) {
-  list(
-    vr_geom_raster_seq(r, ...),
-    scale_fill_gradientn(colours = c("#D53E4F", "#FFFFBF", "#3288BD"))
-    )
-  } 
 gsurvey = vr_geom_point(survey, size = 2)
 ggplot() + vr_geom_raster_seq(r_volcano) + ggtitle("Volcano") + gsurvey
 ggplot() + vr_geom_raster_seq(r_interpolate, limits = range(r_volcano[])) + ggtitle("Interpolation") + gsurvey
@@ -756,7 +745,6 @@ dd$fill = factor(with(dd, as.integer(variable) * value))
 dd$fill[dd$fill == 0] = NA
 dd$fill = droplevels(dd$fill)
 ggplot() +
-  scale_fill_manual(values = pal$qualitative) +
   geom_tile(data = dd, 
             aes(x = x, y = y, fill = fill), 
             color = "#888888", size = 0.25) +

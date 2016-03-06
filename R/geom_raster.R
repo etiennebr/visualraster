@@ -11,7 +11,6 @@ vr_geom_raster = function(r, color = I("#222222"), size = I(0.2), ...) {
     geom_tile(data = as_data(r), 
               aes(x = x, y = y, fill = factor(round(value))), 
               color = color, size = size, ...),
-    scale_fill_manual("", values = pal$qualitative),
     coord_equal()
   )
 }
@@ -36,7 +35,6 @@ vr_geom_raster_seq = function (r, color = I("#222222"), size = I(0.2), ...) {
   }
   list(
     geo,
-    scale_fill_gradient(low = "#FFFFB3", high = "#FB8072"),
     coord_equal()
   )
 }
@@ -49,7 +47,7 @@ vr_geom_raster_seq = function (r, color = I("#222222"), size = I(0.2), ...) {
 vr_geom_raster_div = function (r, ...) {
   list(
     vr_geom_raster_seq(r, ...),
-    scale_fill_gradientn(colours = c("#D53E4F", "#FFFFBF", "#3288BD"))
+    scale_fill_diverge()
   )
 }
 
