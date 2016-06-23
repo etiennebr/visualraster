@@ -704,7 +704,7 @@ ggplot() + vr_geom_raster_seq(power_to_angle(trim(r_terrain[["flowdir"]]))) + gg
 ```
 
 
-## hilShade
+## hillShade
 ```{r}
 r_hill = hillShade(r_terrain[["slope"]], r_terrain[["aspect"]])
 ```
