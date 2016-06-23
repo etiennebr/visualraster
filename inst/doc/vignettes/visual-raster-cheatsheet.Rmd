@@ -655,7 +655,7 @@ ggplot() +
   coord_equal() +  theme_fullframe()
 ```
 
-## rasterToPoints
+## rasterToPolygons
 ```{r}
 pols = rasterToPolygons(r_clumps, dissolve = TRUE)
 ```
@@ -704,7 +704,7 @@ ggplot() + vr_geom_raster_seq(power_to_angle(trim(r_terrain[["flowdir"]]))) + gg
 ```
 
 
-## hilshade
+## hilShade
 ```{r}
 r_hill = hillShade(r_terrain[["slope"]], r_terrain[["aspect"]])
 ```
