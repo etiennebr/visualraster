@@ -27,5 +27,5 @@ You can have a demonstration by typing `demo("vr-cheatsheet")`
 If you find bugs or have features to request, please use the [github tracker][3].
 
 [1]: http://rpubs.com/etiennebr/visualraster
-[2]: https://github.com/etiennebr/visualraster/blob/master/inst/doc/visual-raster-cheatsheet.Rmd
+[2]: https://github.com/etiennebr/visualraster/blob/master/inst/doc/vignettes/visual-raster-cheatsheet.Rmd
 [3]: http://github.com/etiennebr/visualraster/issues
